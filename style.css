@@ -1,0 +1,160 @@
+/* Paleta de colores suaves */
+:root {
+    --primary-color: #ff69b4; /* Pink - Para acentos */
+    --background-color: #f7f0f5; /* Crema/Rosa pálido - Fondo */
+    --text-color: #333;
+    --secondary-color: #e2c0d5; /* Rosa intermedio */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Usa un color sólido de fondo (o déjalo en blanco) */
+    background-color: var(--background-color); 
+    
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; 
+    
+    /* ¡Asegúrate de ELIMINAR las propiedades background-image, background-size, etc. de aquí! */
+}
+
+.container {
+    /* Eliminamos 'background: white;' para que no interfiera */
+    
+    /* CÓDIGO FINAL CON IMAGEN, RUTA CORREGIDA Y CAPA TRANSPARENTE */
+    
+    background-image: 
+        /* Capa blanca semi-transparente (0.85 de opacidad). ¡Ajusta este valor si quieres más o menos transparencia! */
+        linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), 
+        
+        /* Tu imagen de fresas (ruta limpia y correcta) */
+        url('img/fresas.jpg'); 
+        
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    
+    /* Aseguramos que el color del texto sea el correcto (oscuro sobre fondo claro) */
+    color: var(--text-color); 
+    
+    /* Otras propiedades de diseño que ya tenías: */
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* --- CAMBIO DE COLOR Y FUENTE PARA EL TÍTULO --- */
+
+h1 {
+    /* Color rojo intenso (puedes usar el código hexadecimal #FF0000 si prefieres) */
+    color: #000000; 
+    
+    /* Aplicamos la fuente que importamos de Google Fonts */
+    font-family: 'Dancing Script', cursive; 
+    
+    /* Aumentamos el tamaño para que sea un gran encabezado */
+    font-size: 2.5em; 
+    
+    /* Agregamos una sombra suave para que resalte sobre el fondo */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+    
+    margin-bottom: 20px;
+}
+
+/* El resto de tu código CSS... */
+
+.main-image {
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    
+    /* 1. Borde de color secundario (romántico) */
+    border: 3px solid var(--secondary-color); 
+    
+    /* 2. Esquinas muy redondeadas (efecto polaroid suave) */
+    border-radius: 15px; 
+    
+    /* 3. Contorno (outline) sutil para un doble marco */
+    outline: 5px solid rgb(220, 180, 243); /* Un "cojín" blanco alrededor del borde */
+    outline-offset: -5px; /* Hace que el outline se pegue más al borde */
+    
+    /* 4. Sombra más sutil */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+/* --- CAMBIO DE FUENTE PARA EL TEXTO INICIAL --- */
+
+.initial-message {
+    color: #ffffff;
+    /* Aplicamos la nueva fuente */
+    font-family: 'Poppins', sans-serif; 
+    
+    font-size: 1.1em;
+    line-height: 1.6; /* Aumenta el espacio entre líneas para mejor lectura */
+    margin-bottom: 30px;
+    
+    /* Si quieres que el mensaje destaque un poco más: */
+    font-weight: 500; /* Hace el texto un poco más grueso que lo normal */
+}
+
+/* Estilo del botón */
+#surprise-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    margin-bottom: 20px;
+}
+
+#surprise-button:hover {
+    background-color: #e55a9b; /* Color más oscuro al pasar el mouse */
+}
+
+#surprise-button:active {
+    transform: scale(0.98);
+}
+
+/* Mensaje oculto */
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#hidden-message {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--text-color);
+    padding: 15px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Clase para mostrar el mensaje */
+.visible {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
